@@ -201,18 +201,6 @@ body {
 [data-theme="dark"] .sun-icon { opacity: 0; transform: rotate(-180deg) scale(0); }
 [data-theme="dark"] .moon-icon { opacity: 1; transform: rotate(0deg) scale(1); }
 
-.teacher-btn {
-  position: fixed; top: 20px; right: 90px;
-  width: 60px; height: 60px; border-radius: 50%;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop); -webkit-backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
-  cursor: pointer; z-index: 1000;
-  display: flex; align-items: center; justify-content: center;
-  transition: all var(--ios-duration-normal) var(--ios-spring);
-  font-size: 22px; color: var(--ios-text-primary);
-}
-.teacher-btn:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5); background: var(--ios-blue-light); }
 
 .header {
   padding: var(--ios-spacing-lg) 0;
@@ -227,8 +215,6 @@ body {
 .search-input { flex: 1; background: transparent; border: none; outline: none; color: var(--ios-text-primary); font-size: 16px; padding: var(--ios-spacing-sm) var(--ios-spacing-md); border-radius: var(--ios-border-radius-small); transition: all var(--ios-duration-fast) var(--ios-ease); }
 .search-input::placeholder { color: var(--ios-text-tertiary); }
 .search-btn { padding: var(--ios-spacing-sm) var(--ios-spacing-md); font-size: 18px; border-radius: var(--ios-border-radius-small); }
-.admin-toggle { padding: var(--ios-spacing-sm) var(--ios-spacing-md); font-size: 14px; font-weight: 500; border-radius: var(--ios-border-radius-small); white-space: nowrap; }
-.admin-toggle.active { background: var(--ios-orange); color: white; border-color: var(--ios-orange); }
 
 .main { flex: 1; padding: var(--ios-spacing-xl) 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--ios-spacing-lg); }
@@ -371,7 +357,6 @@ body {
     <span class="theme-icon sun-icon">☀️</span>
     <span class="theme-icon moon-icon">🌙</span>
   </button>
-  <button class="teacher-btn glass-button" id="teacherBtn" aria-label="Teacher Mode">👩‍🏫</button>
 
   <header class="header glass-effect">
     <div class="container">
@@ -382,7 +367,6 @@ body {
             <input type="text" id="searchInput" class="search-input" placeholder="Search classes, subjects, or chapters...">
             <button id="searchBtn" class="search-btn glass-button">🔍</button>
           </div>
-          <button id="adminToggle" class="admin-toggle glass-button">🔧 Admin Mode</button>
         </div>
       </div>
     </div>
@@ -495,29 +479,6 @@ body {
     </div>
   </div>
 
-  <!-- Password Modal -->
-  <div class="modal hidden" id="passModal">
-    <div class="modal-overlay glass-backdrop" id="passModalOverlay"></div>
-    <div class="modal-content glass-modal">
-      <div class="modal-header">
-        <h3 class="glass-text">Teacher Access</h3>
-        <button class="modal-close glass-button-close" id="passModalClose">×</button>
-      </div>
-      <div class="modal-body">
-        <div class="pass-form">
-          <div class="form-group">
-            <label class="form-label glass-text">Enter Access Code</label>
-            <input type="text" id="passInput" class="form-control" maxlength="5" placeholder="Enter code">
-          </div>
-          <div class="modal-actions">
-            <button class="btn btn--secondary" id="passCancel">Cancel</button>
-            <button class="btn btn--primary" id="passSubmit">Enter</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="loading hidden" id="loading">
     <div class="glass-card loading-card">
       <div class="spinner glass-spinner"></div>
@@ -543,18 +504,17 @@ const appData = {
       subjects: {
         english: { name: "English", chapters: [
           { name: "My Family and Me", locked: false, links: { modelAnswer: "", homework: "https://docs.google.com/document/d/16YolMZP2_iQuKhQBUT1X40bNVeHJPAQV/edit?usp=drivesdk&ouid=108395413380389499315&rtpof=true&sd=true", worksheet: "" }},
-          { name: "Two Little Hands", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Two Little Hands", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "Greetings and Introductions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "Life Around Me", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "Animals I Love", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "Colors Everywhere", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "Numbers and Fun", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
-          { name: "My School Day", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
-          { name: "Aftab sir", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+          { name: "My School Day", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
         ]},
         hindi: { name: "हिंदी", chapters: [
           { name: "अक्षर ज्ञान", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
-          { name: "मेरा परिवार", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरा परिवार", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "रंग-बिरंगी दुनिया", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "जानवरों की दुनिया", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
           { name: "मेरा स्कूल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
@@ -1231,7 +1191,7 @@ const subjectIcons = {
 };
 
 // State
-let currentState = { view: 'classes', classId: null, subjectId: null, chapterIndex: null, searchActive: false, isAdminMode: false };
+let currentState = { view: 'classes', classId: null, subjectId: null, chapterIndex: null, searchActive: false };
 let currentSearchResults = [];
 let currentEditChapter = null;
 
@@ -1269,17 +1229,14 @@ class ProgressManager {
   constructor() {
     this.progressKey = 'cbse_hub_progress';
     this.linksKey = 'cbse_hub_links';
-    this.adminKey = 'cbse_hub_admin';
     this.progress = JSON.parse(localStorage.getItem(this.progressKey) || '{}');
     this.links = JSON.parse(localStorage.getItem(this.linksKey) || '{}');
-    currentState.isAdminMode = JSON.parse(localStorage.getItem(this.adminKey) || 'false');
   }
   save() { localStorage.setItem(this.progressKey, JSON.stringify(this.progress)); }
   saveLinks() { localStorage.setItem(this.linksKey, JSON.stringify(this.links)); }
-  saveAdmin() { localStorage.setItem(this.adminKey, JSON.stringify(currentState.isAdminMode)); }
   isChapterUnlocked(cId, sId, idx) {
-    if (idx === 0) return true;
-    return this.isChapterCompleted(cId, sId, idx - 1);
+    const ch = appData.classes[cId]?.subjects[sId]?.chapters[idx];
+    return ch ? !ch.locked : false;
   }
   isChapterCompleted(cId, sId, idx) {
     return this.progress[cId]?.[sId]?.[idx]?.completed || false;
@@ -1412,13 +1369,6 @@ function showChapters(classId, subjectId) {
       const completed = pm.isChapterCompleted(classId, subjectId, idx);
       const date = pm.getCompletionDate(classId, subjectId, idx);
       const statusIcon = completed ? '✅' : (unlocked ? '🔓' : '🔒');
-      let adminHtml = '';
-      if (currentState.isAdminMode && unlocked) {
-        adminHtml = `<div class="admin-controls">
-          ${!completed ? `<button class="admin-btn" onclick="event.stopPropagation();markComplete('${classId}','${subjectId}',${idx})">✓ Mark Complete</button>` : ''}
-          <button class="edit-links-btn" onclick="event.stopPropagation();showLinkModal('${classId}','${subjectId}',${idx})">🔗 Edit Links</button>
-        </div>`;
-      }
       return `<div class="chapter-card glass-card ${unlocked ? 'glass-hover' : 'locked'}" onclick="handleChapterClick('${classId}','${subjectId}',${idx})">
         <div class="chapter-header">
           <div class="chapter-number">Ch ${idx + 1}</div>
@@ -1429,7 +1379,6 @@ function showChapters(classId, subjectId) {
           <p class="subject-info glass-text-secondary">${unlocked ? '📋 Resources available' : '🔒 Complete previous chapters'}</p>
           ${completed && date ? `<div class="completion-date">🎯 Completed: ${date}</div>` : ''}
         </div>
-        ${adminHtml}
       </div>`;
     }).join('');
     animateCards();
@@ -1510,47 +1459,6 @@ function handleLinkSave() {
   showIOSNotification('Links saved!', '💾');
 }
 
-// ---- Password Modal ----
-function showPassModal() { openModal('passModal'); setTimeout(() => document.getElementById('passInput')?.focus(), 100); }
-function closePassModal() { closeModal('passModal'); document.getElementById('passInput').value = ''; }
-function handlePassSubmit() {
-  const val = document.getElementById('passInput').value.trim();
-  const now = new Date();
-  const hh = String(now.getHours()).padStart(2, '0');
-  const mm = String(now.getMinutes()).padStart(2, '0');
-  const valid = [hh + mm, hh + ':' + mm, '0000', '1234'];
-  if (valid.includes(val)) {
-    currentState.isAdminMode = true;
-    pm.saveAdmin();
-    updateAdminUI();
-    closePassModal();
-    if (currentState.view === 'chapters') showChapters(currentState.classId, currentState.subjectId);
-    showIOSNotification('Teacher Mode Enabled!', '👩‍🏫');
-  } else {
-    const inp = document.getElementById('passInput');
-    inp.classList.add('shake');
-    setTimeout(() => { inp.classList.remove('shake'); inp.value = ''; inp.focus(); }, 500);
-  }
-}
-
-// ---- Admin Toggle ----
-function handleAdminToggle() {
-  if (currentState.isAdminMode) {
-    currentState.isAdminMode = false;
-    pm.saveAdmin();
-    updateAdminUI();
-    if (currentState.view === 'chapters') showChapters(currentState.classId, currentState.subjectId);
-    showIOSNotification('Student Mode Enabled', '🎓');
-  } else {
-    showPassModal();
-  }
-}
-function updateAdminUI() {
-  const btn = document.getElementById('adminToggle');
-  if (currentState.isAdminMode) { btn.innerHTML = '👩‍🏫 Exit Teacher Mode'; btn.classList.add('active'); }
-  else { btn.innerHTML = '🔧 Admin Mode'; btn.classList.remove('active'); }
-}
-
 // ---- Generic Modal Open/Close ----
 function openModal(id) {
   const m = document.getElementById(id);
@@ -1622,26 +1530,16 @@ function handleBack() {
 // ---- Init ----
 function init() {
   showClasses();
-  updateAdminUI();
 
   document.getElementById('backBtn').addEventListener('click', handleBack);
   document.getElementById('searchBtn').addEventListener('click', handleSearch);
-  document.getElementById('adminToggle').addEventListener('click', handleAdminToggle);
-  document.getElementById('teacherBtn').addEventListener('click', showPassModal);
   document.getElementById('searchInput').addEventListener('keypress', e => { if (e.key === 'Enter') handleSearch(); });
   document.getElementById('searchInput').addEventListener('input', e => { if (!e.target.value) hideSearchResults(); });
 
-  // Modal close buttons
   document.getElementById('modalClose').addEventListener('click', () => closeModal('resourceModal'));
   document.getElementById('modalOverlay').addEventListener('click', () => closeModal('resourceModal'));
   document.getElementById('lockedModalClose').addEventListener('click', () => closeModal('lockedModal'));
   document.getElementById('lockedModalOverlay').addEventListener('click', () => closeModal('lockedModal'));
-  document.getElementById('passModalClose').addEventListener('click', closePassModal);
-  document.getElementById('passModalOverlay').addEventListener('click', closePassModal);
-  document.getElementById('passCancel').addEventListener('click', closePassModal);
-  document.getElementById('passSubmit').addEventListener('click', handlePassSubmit);
-  document.getElementById('passInput').addEventListener('keypress', e => { if (e.key === 'Enter') handlePassSubmit(); });
-  document.getElementById('passInput').addEventListener('input', e => { e.target.value = e.target.value.replace(/[^0-9:]/g, '').slice(0, 5); });
   document.getElementById('linkModalClose').addEventListener('click', closeLinkModal);
   document.getElementById('linkModalOverlay').addEventListener('click', closeLinkModal);
   document.getElementById('linkCancel').addEventListener('click', closeLinkModal);
@@ -1649,7 +1547,7 @@ function init() {
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      ['resourceModal','lockedModal','passModal','linkModal'].forEach(id => {
+      ['resourceModal','lockedModal','linkModal'].forEach(id => {
         if (!document.getElementById(id).classList.contains('hidden')) closeModal(id);
       });
     }
