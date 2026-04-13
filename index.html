@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Study Hub - Classes 1-10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ios-background: rgba(247, 247, 249, 0.95);
+  --ios-surface: rgba(255, 255, 255, 0.8);
+  --ios-surface-secondary: rgba(255, 255, 255, 0.6);
+  --ios-text-primary: rgba(0, 0, 0, 0.87);
+  --ios-text-secondary: rgba(0, 0, 0, 0.6);
+  --ios-text-tertiary: rgba(0, 0, 0, 0.4);
+  --ios-blue: #007AFF;
+  --ios-blue-light: rgba(0, 122, 255, 0.1);
+  --ios-green: #34C759;
+  --ios-red: #FF3B30;
+  --ios-orange: #FF9500;
+  --ios-purple: #AF52DE;
+  --ios-pink: #FF2D92;
+  --ios-yellow: #FFCC00;
+  --ios-teal: #5AC8FA;
+  --ios-indigo: #5856D6;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --glass-backdrop: blur(10px);
+  --glass-backdrop-heavy: blur(20px);
+  --ios-border-radius: 16px;
+  --ios-border-radius-small: 12px;
+  --ios-border-radius-large: 20px;
+  --ios-spacing-xs: 4px;
+  --ios-spacing-sm: 8px;
+  --ios-spacing-md: 16px;
+  --ios-spacing-lg: 24px;
+  --ios-spacing-xl: 32px;
+  --ios-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ios-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ios-duration-fast: 0.2s;
+  --ios-duration-normal: 0.3s;
+  --ios-duration-slow: 0.5s;
+}
+
+[data-theme="dark"] {
+  --ios-background: rgba(0, 0, 0, 0.95);
+  --ios-surface: rgba(28, 28, 30, 0.8);
+  --ios-surface-secondary: rgba(44, 44, 46, 0.8);
+  --ios-text-primary: rgba(255, 255, 255, 0.87);
+  --ios-text-secondary: rgba(255, 255, 255, 0.6);
+  --ios-text-tertiary: rgba(255, 255, 255, 0.4);
+  --ios-blue: #0A84FF;
+  --ios-blue-light: rgba(10, 132, 255, 0.15);
+  --ios-green: #30D158;
+  --ios-red: #FF453A;
+  --ios-orange: #FF9F0A;
+  --ios-purple: #BF5AF2;
+  --ios-pink: #FF375F;
+  --ios-yellow: #FFD60A;
+  --ios-teal: #64D2FF;
+  --ios-indigo: #5E5CE6;
+  --glass-bg: rgba(0, 0, 0, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ios-background: rgba(0, 0, 0, 0.95);
+    --ios-surface: rgba(28, 28, 30, 0.8);
+    --ios-surface-secondary: rgba(44, 44, 46, 0.8);
+    --ios-text-primary: rgba(255, 255, 255, 0.87);
+    --ios-text-secondary: rgba(255, 255, 255, 0.6);
+    --ios-text-tertiary: rgba(255, 255, 255, 0.4);
+    --ios-blue: #0A84FF;
+    --ios-blue-light: rgba(10, 132, 255, 0.15);
+    --ios-green: #30D158;
+    --ios-red: #FF453A;
+    --ios-orange: #FF9F0A;
+    --ios-purple: #BF5AF2;
+    --ios-pink: #FF375F;
+    --ios-yellow: #FFD60A;
+    --ios-teal: #64D2FF;
+    --ios-indigo: #5E5CE6;
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ios-background);
+  color: var(--ios-text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--ios-duration-normal) var(--ios-ease), color var(--ios-duration-normal) var(--ios-ease);
+  position: relative;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 20% 50%, var(--ios-blue-light) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(175,82,222,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255,45,146,0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--ios-border-radius);
+  box-shadow: var(--glass-shadow);
+  transition: all var(--ios-duration-normal) var(--ios-ease);
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+.glass-button {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--ios-border-radius-small);
+  color: var(--ios-text-primary);
+  cursor: pointer;
+  transition: all var(--ios-duration-fast) var(--ios-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(31, 38, 135, 0.4); }
+.glass-button:active { transform: translateY(0px) scale(0.98); }
+
+.glass-button-close {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ios-text-secondary);
+  cursor: pointer; font-size: 18px;
+  transition: all var(--ios-duration-fast) var(--ios-ease);
+}
+.glass-button-close:hover { background: var(--ios-red); color: white; transform: scale(1.1); }
+
+.glass-modal {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop-heavy);
+  -webkit-backdrop-filter: var(--glass-backdrop-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--ios-border-radius-large);
+  box-shadow: 0 20px 60px rgba(31, 38, 135, 0.6);
+}
+
+.glass-backdrop { backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background: rgba(0,0,0,0.3); }
+.glass-text { color: var(--ios-text-primary); transition: color var(--ios-duration-normal) var(--ios-ease); }
+.glass-text-secondary { color: var(--ios-text-secondary); transition: color var(--ios-duration-normal) var(--ios-ease); }
+
+.theme-toggle {
+  position: fixed; top: 20px; right: 20px;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop); -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+  cursor: pointer; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--ios-duration-normal) var(--ios-spring); overflow: hidden;
+}
+.theme-toggle:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5); }
+.theme-toggle:active { transform: scale(1.05); }
+.theme-icon { position: absolute; font-size: 24px; transition: all var(--ios-duration-normal) var(--ios-ease); }
+.sun-icon { opacity: 1; transform: rotate(0deg) scale(1); }
+.moon-icon { opacity: 0; transform: rotate(180deg) scale(0); }
+[data-theme="dark"] .sun-icon { opacity: 0; transform: rotate(-180deg) scale(0); }
+[data-theme="dark"] .moon-icon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+.teacher-btn {
+  position: fixed; top: 20px; right: 90px;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop); -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+  cursor: pointer; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--ios-duration-normal) var(--ios-spring);
+  font-size: 22px; color: var(--ios-text-primary);
+}
+.teacher-btn:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5); background: var(--ios-blue-light); }
+
+.header {
+  padding: var(--ios-spacing-lg) 0;
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid var(--glass-border);
+}
+.header-content { display: flex; justify-content: space-between; align-items: center; gap: var(--ios-spacing-lg); flex-wrap: wrap; }
+.app-title { font-size: 2rem; font-weight: 700; color: var(--ios-text-primary); text-shadow: 0 2px 4px rgba(0,0,0,0.1); letter-spacing: -0.02em; }
+.header-controls { display: flex; align-items: center; gap: var(--ios-spacing-md); flex-wrap: wrap; }
+
+.search-container { display: flex; align-items: center; gap: var(--ios-spacing-sm); padding: var(--ios-spacing-sm); min-width: 320px; }
+.search-input { flex: 1; background: transparent; border: none; outline: none; color: var(--ios-text-primary); font-size: 16px; padding: var(--ios-spacing-sm) var(--ios-spacing-md); border-radius: var(--ios-border-radius-small); transition: all var(--ios-duration-fast) var(--ios-ease); }
+.search-input::placeholder { color: var(--ios-text-tertiary); }
+.search-btn { padding: var(--ios-spacing-sm) var(--ios-spacing-md); font-size: 18px; border-radius: var(--ios-border-radius-small); }
+.admin-toggle { padding: var(--ios-spacing-sm) var(--ios-spacing-md); font-size: 14px; font-weight: 500; border-radius: var(--ios-border-radius-small); white-space: nowrap; }
+.admin-toggle.active { background: var(--ios-orange); color: white; border-color: var(--ios-orange); }
+
+.main { flex: 1; padding: var(--ios-spacing-xl) 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--ios-spacing-lg); }
+
+.breadcrumb { display: flex; align-items: center; gap: var(--ios-spacing-sm); margin-bottom: var(--ios-spacing-xl); padding: var(--ios-spacing-md); flex-wrap: wrap; }
+.breadcrumb-item { color: var(--ios-text-secondary); cursor: pointer; transition: all var(--ios-duration-fast) var(--ios-ease); }
+.breadcrumb-item:not(.active):hover { color: var(--ios-blue); }
+.breadcrumb-item.active { color: var(--ios-blue); font-weight: 600; }
+.breadcrumb-item:not(:last-child)::after { content: '›'; margin-left: var(--ios-spacing-sm); color: var(--ios-text-tertiary); font-weight: 300; }
+
+.page-header { text-align: center; margin-bottom: var(--ios-spacing-xl); }
+.page-title { font-size: 3rem; font-weight: 700; margin-bottom: var(--ios-spacing-md); background: linear-gradient(135deg, var(--ios-blue), var(--ios-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
+.page-subtitle { font-size: 1.2rem; color: var(--ios-text-secondary); font-weight: 400; }
+
+.back-btn { padding: var(--ios-spacing-md) var(--ios-spacing-lg); margin-bottom: var(--ios-spacing-lg); font-size: 16px; font-weight: 500; border-radius: var(--ios-border-radius-small); }
+
+.content-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--ios-spacing-lg); margin-bottom: var(--ios-spacing-xl); }
+
+.class-card, .subject-card, .chapter-card {
+  padding: var(--ios-spacing-lg); cursor: pointer; position: relative; overflow: hidden;
+  transition: all var(--ios-duration-normal) var(--ios-spring);
+  min-height: 180px; display: flex; flex-direction: column; justify-content: space-between;
+}
+.class-card:hover, .subject-card:hover, .chapter-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 60px rgba(31, 38, 135, 0.6); }
+.class-card::before, .subject-card::before, .chapter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--ios-blue), var(--ios-purple)); transform: scaleX(0); transform-origin: left; transition: transform var(--ios-duration-normal) var(--ios-ease); }
+.class-card:hover::before, .subject-card:hover::before, .chapter-card:hover::before { transform: scaleX(1); }
+.chapter-card.locked { opacity: 0.6; cursor: not-allowed; }
+.chapter-card.locked::before { background: linear-gradient(90deg, var(--ios-text-tertiary), var(--ios-text-secondary)); }
+.chapter-card.locked:hover { transform: none; box-shadow: var(--glass-shadow); }
+
+.class-number { font-size: 4rem; font-weight: 700; color: var(--ios-blue); margin-bottom: var(--ios-spacing-md); line-height: 1; }
+.class-name { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--ios-spacing-sm); color: var(--ios-text-primary); }
+.class-stage { color: var(--ios-text-secondary); font-size: 0.9rem; font-weight: 400; }
+
+.subject-icon { font-size: 3rem; margin-bottom: var(--ios-spacing-md); display: block; }
+.subject-name, .chapter-title { font-size: 1.3rem; font-weight: 600; margin-bottom: var(--ios-spacing-sm); color: var(--ios-text-primary); }
+.subject-info { color: var(--ios-text-secondary); font-size: 0.9rem; margin-bottom: var(--ios-spacing-md); }
+.subject-progress { display: flex; align-items: center; gap: var(--ios-spacing-md); }
+.progress-bar { flex: 1; height: 6px; background: var(--ios-surface-secondary); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--ios-green), var(--ios-teal)); transition: width var(--ios-duration-slow) var(--ios-ease); border-radius: 3px; }
+.progress-text { font-size: 0.8rem; color: var(--ios-text-secondary); font-weight: 600; min-width: 40px; }
+
+.chapter-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--ios-spacing-md); }
+.chapter-number { background: var(--ios-blue-light); color: var(--ios-blue); padding: var(--ios-spacing-xs) var(--ios-spacing-md); border-radius: var(--ios-border-radius-small); font-size: 0.8rem; font-weight: 600; }
+.chapter-status { font-size: 1.5rem; }
+.completion-date { font-size: 0.8rem; color: var(--ios-green); margin-top: var(--ios-spacing-sm); font-weight: 500; }
+
+.admin-controls { margin-top: var(--ios-spacing-md); display: flex; gap: var(--ios-spacing-sm); flex-wrap: wrap; }
+.admin-btn { background: var(--ios-green); color: white; border: none; padding: var(--ios-spacing-sm) var(--ios-spacing-md); border-radius: var(--ios-border-radius-small); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all var(--ios-duration-fast) var(--ios-ease); }
+.edit-links-btn { background: var(--ios-blue); color: white; border: none; padding: var(--ios-spacing-sm) var(--ios-spacing-md); border-radius: var(--ios-border-radius-small); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all var(--ios-duration-fast) var(--ios-ease); }
+.admin-btn:hover, .edit-links-btn:hover { transform: translateY(-2px); }
+.admin-btn:active, .edit-links-btn:active { transform: translateY(0); }
+
+.search-results { margin-top: var(--ios-spacing-xl); }
+.search-results .glass-card { padding: var(--ios-spacing-lg); }
+.search-results h3 { margin-bottom: var(--ios-spacing-lg); color: var(--ios-text-primary); font-size: 1.5rem; font-weight: 600; }
+#searchResultsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--ios-spacing-md); }
+.search-result-card { padding: var(--ios-spacing-md); cursor: pointer; transition: all var(--ios-duration-normal) var(--ios-ease); border-radius: var(--ios-border-radius-small); }
+.search-result-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4); }
+.search-result-type { font-size: 0.8rem; color: var(--ios-text-secondary); margin-bottom: var(--ios-spacing-sm); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
+.search-no-results { text-align: center; padding: var(--ios-spacing-xl); color: var(--ios-text-secondary); }
+
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--ios-duration-normal) var(--ios-ease); }
+.modal:not(.hidden) { opacity: 1; visibility: visible; }
+.modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.modal-content { width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; transform: scale(0.9) translateY(20px); transition: transform var(--ios-duration-normal) var(--ios-spring); }
+.modal:not(.hidden) .modal-content { transform: scale(1) translateY(0); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: var(--ios-spacing-lg); border-bottom: 1px solid var(--glass-border); }
+.modal-header h3 { margin: 0; color: var(--ios-text-primary); font-size: 1.5rem; font-weight: 600; }
+.modal-body { padding: var(--ios-spacing-lg); }
+.modal-body p { margin-bottom: var(--ios-spacing-lg); color: var(--ios-text-secondary); }
+.resource-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--ios-spacing-md); }
+.resource-link { text-decoration: none; color: inherit; }
+.resource-card { padding: var(--ios-spacing-lg); text-align: center; transition: all var(--ios-duration-normal) var(--ios-spring); border-radius: var(--ios-border-radius); }
+.resource-card.disabled { opacity: 0.5; cursor: not-allowed; }
+.resource-card.disabled:hover { transform: none; }
+.resource-icon { font-size: 3rem; margin-bottom: var(--ios-spacing-md); }
+.resource-card h4 { margin-bottom: var(--ios-spacing-sm); color: var(--ios-text-primary); font-size: 1.1rem; font-weight: 600; }
+.resource-card p { font-size: 0.9rem; color: var(--ios-text-secondary); margin: 0; }
+
+.link-form { display: flex; flex-direction: column; gap: var(--ios-spacing-md); }
+.form-group { margin-bottom: var(--ios-spacing-lg); }
+.form-label { display: block; margin-bottom: var(--ios-spacing-sm); font-weight: 500; font-size: 0.9rem; color: var(--ios-text-primary); }
+.form-control { width: 100%; padding: var(--ios-spacing-md); border: 1px solid var(--glass-border); border-radius: var(--ios-border-radius-small); background: var(--glass-bg); color: var(--ios-text-primary); font-size: 16px; transition: all var(--ios-duration-fast) var(--ios-ease); backdrop-filter: var(--glass-backdrop); -webkit-backdrop-filter: var(--glass-backdrop); }
+.form-control:focus { outline: none; border-color: var(--ios-blue); box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); }
+.form-control::placeholder { color: var(--ios-text-tertiary); }
+.modal-actions { display: flex; gap: var(--ios-spacing-md); justify-content: center; margin-top: var(--ios-spacing-lg); }
+
+.btn { padding: var(--ios-spacing-md) var(--ios-spacing-lg); border-radius: var(--ios-border-radius-small); font-size: 16px; font-weight: 500; cursor: pointer; transition: all var(--ios-duration-fast) var(--ios-spring); border: none; min-width: 100px; }
+.btn--primary { background: var(--ios-blue); color: white; }
+.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4); }
+.btn--secondary { background: var(--glass-bg); color: var(--ios-text-primary); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-backdrop); -webkit-backdrop-filter: var(--glass-backdrop); }
+.btn--secondary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(31, 38, 135, 0.4); }
+
+@keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 20%, 40%, 60%, 80% { transform: translateX(5px); } }
+.shake { animation: shake 0.5s ease-in-out; }
+
+.locked-message { text-align: center; padding: var(--ios-spacing-lg); }
+.locked-icon { font-size: 4rem; margin-bottom: var(--ios-spacing-lg); opacity: 0.7; }
+.locked-message h4 { color: var(--ios-text-primary); margin-bottom: var(--ios-spacing-md); font-size: 1.3rem; font-weight: 600; }
+.locked-message p { color: var(--ios-text-secondary); margin: 0; line-height: 1.6; }
+
+.loading { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 2000; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.loading-card { padding: var(--ios-spacing-xl); text-align: center; min-width: 200px; }
+.spinner { width: 40px; height: 40px; border: 3px solid var(--ios-surface-secondary); border-top: 3px solid var(--ios-blue); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto var(--ios-spacing-md); }
+.glass-spinner { border: 3px solid var(--glass-border); border-top: 3px solid var(--ios-blue); }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.footer { padding: var(--ios-spacing-lg) 0; text-align: center; border-top: 1px solid var(--glass-border); margin-top: auto; }
+.footer p { color: var(--ios-text-secondary); font-size: 0.9rem; margin: 0; }
+
+.hidden { display: none !important; }
+
+@media (max-width: 768px) {
+  .theme-toggle { width: 50px; height: 50px; top: 15px; right: 15px; }
+  .teacher-btn { width: 50px; height: 50px; top: 15px; right: 75px; font-size: 18px; }
+  .theme-icon { font-size: 20px; }
+  .header-content { flex-direction: column; gap: var(--ios-spacing-md); }
+  .header-controls { width: 100%; flex-direction: column; gap: var(--ios-spacing-md); }
+  .search-container { width: 100%; min-width: auto; }
+  .app-title { font-size: 1.75rem; }
+  .page-title { font-size: 2.5rem; }
+  .content-grid { grid-template-columns: 1fr; gap: var(--ios-spacing-md); }
+  .modal-content { width: 95%; }
+  .resource-options { grid-template-columns: 1fr; }
+  .class-card, .subject-card, .chapter-card { min-height: 160px; padding: var(--ios-spacing-md); }
+  .class-number { font-size: 3rem; }
+  .modal-actions { flex-direction: column; }
+  .btn { width: 100%; }
+  .admin-controls { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="theme-icon sun-icon">☀️</span>
+    <span class="theme-icon moon-icon">🌙</span>
+  </button>
+  <button class="teacher-btn glass-button" id="teacherBtn" aria-label="Teacher Mode">👩‍🏫</button>
+
+  <header class="header glass-effect">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="app-title">📚 CBSE Study Hub</h1>
+        <div class="header-controls">
+          <div class="search-container glass-card">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search classes, subjects, or chapters...">
+            <button id="searchBtn" class="search-btn glass-button">🔍</button>
+          </div>
+          <button id="adminToggle" class="admin-toggle glass-button">🔧 Admin Mode</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <nav class="breadcrumb glass-card" id="breadcrumb">
+        <span class="breadcrumb-item active">Home</span>
+      </nav>
+      <div class="page-header">
+        <h2 class="page-title glass-text" id="pageTitle">Select Your Class</h2>
+        <p class="page-subtitle glass-text-secondary" id="pageSubtitle">Choose from Classes 1-10 to access notes, worksheets, and model answers</p>
+      </div>
+      <button class="back-btn glass-button hidden" id="backBtn">← Back</button>
+      <div class="content-grid" id="contentGrid"></div>
+      <div class="search-results hidden" id="searchResults">
+        <div class="glass-card">
+          <h3 class="glass-text">Search Results</h3>
+          <div id="searchResultsGrid"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Resource Modal -->
+  <div class="modal hidden" id="resourceModal">
+    <div class="modal-overlay glass-backdrop" id="modalOverlay"></div>
+    <div class="modal-content glass-modal">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="glass-text">Chapter Resources</h3>
+        <button class="modal-close glass-button-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalSubtitle" class="glass-text-secondary">Select the type of resource you want to access:</p>
+        <div class="resource-options">
+          <a href="#" class="resource-link" id="modelAnswerLink" target="_blank">
+            <div class="resource-card glass-card glass-hover">
+              <div class="resource-icon">📋</div>
+              <h4 class="glass-text">Model Answer</h4>
+              <p class="glass-text-secondary" id="modelAnswerStatus">Available</p>
+            </div>
+          </a>
+          <a href="#" class="resource-link" id="homeworkLink" target="_blank">
+            <div class="resource-card glass-card glass-hover">
+              <div class="resource-icon">📝</div>
+              <h4 class="glass-text">Homework</h4>
+              <p class="glass-text-secondary" id="homeworkStatus">Available</p>
+            </div>
+          </a>
+          <a href="#" class="resource-link" id="worksheetLink" target="_blank">
+            <div class="resource-card glass-card glass-hover">
+              <div class="resource-icon">📄</div>
+              <h4 class="glass-text">Worksheet</h4>
+              <p class="glass-text-secondary" id="worksheetStatus">Available</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link Modal -->
+  <div class="modal hidden" id="linkModal">
+    <div class="modal-overlay glass-backdrop" id="linkModalOverlay"></div>
+    <div class="modal-content glass-modal">
+      <div class="modal-header">
+        <h3 class="glass-text">Edit Chapter Links</h3>
+        <button class="modal-close glass-button-close" id="linkModalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="linkModalSubtitle" class="glass-text-secondary">Add or update Google Drive links for chapter resources:</p>
+        <div class="link-form">
+          <div class="form-group">
+            <label class="form-label glass-text">📋 Model Answer Link</label>
+            <input type="url" id="modelAnswerInput" class="form-control" placeholder="Paste Google Drive link here...">
+          </div>
+          <div class="form-group">
+            <label class="form-label glass-text">📝 Homework Link</label>
+            <input type="url" id="homeworkInput" class="form-control" placeholder="Paste Google Drive link here...">
+          </div>
+          <div class="form-group">
+            <label class="form-label glass-text">📄 Worksheet Link</label>
+            <input type="url" id="worksheetInput" class="form-control" placeholder="Paste Google Drive link here...">
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn--secondary" id="linkCancel">Cancel</button>
+            <button class="btn btn--primary" id="linkSave">Save Links</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Locked Modal -->
+  <div class="modal hidden" id="lockedModal">
+    <div class="modal-overlay glass-backdrop" id="lockedModalOverlay"></div>
+    <div class="modal-content glass-modal">
+      <div class="modal-header">
+        <h3 class="glass-text">Chapter Locked</h3>
+        <button class="modal-close glass-button-close" id="lockedModalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="locked-message">
+          <div class="locked-icon">🔒</div>
+          <h4 class="glass-text">This chapter is currently locked</h4>
+          <p class="glass-text-secondary">Complete the previous chapters to unlock this content. Your teacher will mark chapters as complete when you finish them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Password Modal -->
+  <div class="modal hidden" id="passModal">
+    <div class="modal-overlay glass-backdrop" id="passModalOverlay"></div>
+    <div class="modal-content glass-modal">
+      <div class="modal-header">
+        <h3 class="glass-text">Teacher Access</h3>
+        <button class="modal-close glass-button-close" id="passModalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="pass-form">
+          <div class="form-group">
+            <label class="form-label glass-text">Enter Access Code</label>
+            <input type="text" id="passInput" class="form-control" maxlength="5" placeholder="Enter code">
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn--secondary" id="passCancel">Cancel</button>
+            <button class="btn btn--primary" id="passSubmit">Enter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading hidden" id="loading">
+    <div class="glass-card loading-card">
+      <div class="spinner glass-spinner"></div>
+      <p class="glass-text">Loading...</p>
+    </div>
+  </div>
+
+  <footer class="footer glass-effect">
+    <div class="container">
+      <p class="glass-text-secondary">&copy; 2025 CBSE Study Hub. All rights reserved. | Classes 1-10 Educational Resources</p>
+    </div>
+  </footer>
+
+<script>
+// ============================================================
+// CBSE STUDY HUB — COMPLETE DATA FOR CLASSES 1–10
+// Each class has its own unique subjects and chapters
+// ============================================================
+const appData = {
+  classes: {
+    "1": {
+      name: "Class 1", stage: "Primary",
+      subjects: {
+        english: { name: "English", chapters: [
+          { name: "My Family and Me", locked: false, links: { modelAnswer: "", homework: "https://docs.google.com/document/d/16YolMZP2_iQuKhQBUT1X40bNVeHJPAQV/edit?usp=drivesdk&ouid=108395413380389499315&rtpof=true&sd=true", worksheet: "" }},
+          { name: "Two Little Hands", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Greetings and Introductions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Life Around Me", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Animals I Love", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Colors Everywhere", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Numbers and Fun", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My School Day", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी", chapters: [
+          { name: "अक्षर ज्ञान", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरा परिवार", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "रंग-बिरंगी दुनिया", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "जानवरों की दुनिया", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरा स्कूल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "खेल का समय", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "त्योहार", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "प्रकृति", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Numbers 1–10", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Shapes Around Us", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Bigger and Smaller", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Addition Fun", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Subtraction Games", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Patterns", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Money", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Time", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        evs: { name: "Environmental Studies", chapters: [
+          { name: "My Body", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My Family", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My Home", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Plants Around Us", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Water", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Food", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Travel and Communication", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Things We Make and Use", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "2": {
+      name: "Class 2", stage: "Primary",
+      subjects: {
+        english: { name: "English (Marigold)", chapters: [
+          { name: "First Day at School", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "I Am Lucky!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Smile", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Wind and Sunlight", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Rain", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Storm in the Garden", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mr. Nobody", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "On My Blackboard I Can Draw", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Curlylocks and the Three Bears", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Strange Talk", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (सरल)", chapters: [
+          { name: "ऊँट चला", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "भालू ने खेली फुटबॉल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "म्याऊँ, म्याऊँ!!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "अधिक बलवान कौन?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "दोस्त की मदद", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बहुत हुआ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरी किताब", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "तितली और कली", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बुलबुल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरी माँ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics (Maths Magic)", chapters: [
+          { name: "What is Long, What is Round?", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Counting in Groups", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Much Can You Carry?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Counting in Tens", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Patterns", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Footprints", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Jugs and Mugs", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tens and Ones", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My Funday", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Add Our Points!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Lines and Lines", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Give and Take", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Longest Step", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Birds Come, Birds Go", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Many Ponytails?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        evs: { name: "Environmental Studies (Aas Paas)", chapters: [
+          { name: "Poonam's Day Out", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Plant Fairy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Day with Nandu", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Story of Food", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Seeds and Seeds", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Busy Month", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Changing Families", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Treat for Mosquitoes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Like Father Like Daughter", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Whose Forests?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "3": {
+      name: "Class 3", stage: "Primary",
+      subjects: {
+        english: { name: "English (Marigold)", chapters: [
+          { name: "Good Morning", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Magic Garden", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Bird Talk", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Nina and the Baby Sparrows", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ice-cream Man", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Somebody's Mother", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Enormous Turnip", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Ship of the Desert", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (रिमझिम)", chapters: [
+          { name: "कक्कू", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "शेखीबाज़ मक्खी", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "चाँद वाली अम्मा", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मन करता है", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बहादुर बित्तो", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "हमसे सब कहते", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "टिपटिपवा", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बंदर बाँट", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics (Maths Magic)", chapters: [
+          { name: "Where to Look From", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fun with Numbers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Give and Take", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Long and Short", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Shapes and Designs", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fun with Give and Take", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Time Goes On", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Who is Heavier?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Many Times?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Play with Patterns", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Jugs and Mugs", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Can We Share?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Smart Charts!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Rupees and Paise", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        evs: { name: "Environmental Studies (Aas Paas)", chapters: [
+          { name: "Poonam's Day Out", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Plant Fairy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Day with Nandu", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Our First School", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Seeds and Seeds", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Busy Month", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Changing Families", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Flying High", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "It's Raining!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "What is Cooking?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From Here to There", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Work We Do", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "4": {
+      name: "Class 4", stage: "Primary",
+      subjects: {
+        english: { name: "English (Marigold)", chapters: [
+          { name: "Wake Up!", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Neha's Alarm Clock", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Noses", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Milkman's Cow", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Scholar's Mother Tongue", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Hiawatha", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Giving Tree", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Don't Be Afraid of the Dark", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Pinocchio", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Helen Keller", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (रिमझिम)", chapters: [
+          { name: "मन के भोले-भाले बादल", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "जैसा सवाल वैसा जवाब", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "किरमिच की गेंद", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "पापा जब बच्चे थे", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "दोस्त की पोशाक", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नाव बनाओ नाव बनाओ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "दान का हिसाब", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "कौन?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "स्वतंत्रता की ओर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "थप्प रोटी थप्प दाल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics (Maths Magic)", chapters: [
+          { name: "Building with Bricks", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Long and Short", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Trip to Bhopal", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tick-Tick-Tick", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Way the World Looks", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Junk Seller", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Jugs and Mugs", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Carts and Wheels", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Halves and Quarters", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Play with Patterns", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tables and Shares", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Heavy? How Light?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fields and Fences", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Smart Charts", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        evs: { name: "Environmental Studies (Aas Paas)", chapters: [
+          { name: "Going to School", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ear to Ear", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Day with Nandu", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Story of Amrita", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Anita and the Honeybees", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Omana's Journey", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From the Window", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Reaching Grandmother's House", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Changing Families", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Hu Tu Tu, Hu Tu Tu", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Valley of Flowers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Changing Times", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "5": {
+      name: "Class 5", stage: "Upper Primary",
+      subjects: {
+        english: { name: "English (Marigold)", chapters: [
+          { name: "Ice-Cream Man", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Wonderful Waste!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Teamwork", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Flying Together", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Around the World", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My Shadow", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Robinson Crusoe Discovers a Footprint", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Crying", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Village by the Sea", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Who Will be Ningthou?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (रिमझिम)", chapters: [
+          { name: "राख की रस्सी", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "फसलों के त्योहार", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "खिलौनेवाला", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नन्हा फ़नकार", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "जहाँ चाह वहाँ राह", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "चिट्ठी का सफ़र", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "डाकिए की कहानी, कँवरसिंह की ज़ुबानी", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "वे दिन भी क्या दिन थे", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "एक माँ की बेबसी", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "हम होंगे कामयाब एक दिन", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics (Maths Magic)", chapters: [
+          { name: "The Fish Tale", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Shapes and Angles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Many Squares?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Parts and Wholes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Does it Look the Same?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Be My Multiple, I'll be Your Factor", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Can You See the Pattern?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mapping Your Way", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Boxes and Sketches", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tenths and Hundredths", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Area and its Boundary", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Smart Charts", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ways to Multiply and Divide", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Big? How Heavy?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        evs: { name: "Environmental Studies (Aas Paas)", chapters: [
+          { name: "Super Senses", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Snake Charmer's Story", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From Tasting to Digesting", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mangoes Round the Year", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Seeds and Seeds", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Every Drop Counts", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Experiments with Water", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Treat for Mosquitoes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Up You Go!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Walls Tell Stories", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Sunita in Space", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "What If It Finishes?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "6": {
+      name: "Class 6", stage: "Middle School",
+      subjects: {
+        english: { name: "English (Honeysuckle)", chapters: [
+          { name: "Who Did Patrick's Homework?", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How the Dog Found Himself a New Master!", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Taro's Reward", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "An Indian – American Woman in Space", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Different Kind of School", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Who I Am", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fair Play", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Game of Chance", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Desert Animals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Banyan Tree", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (वसंत)", chapters: [
+          { name: "वह चिड़िया जो", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बचपन", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नादान दोस्त", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "चाँद से थोड़ी सी गप्पें", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "अक्षरों का महत्व", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "पार नज़र के", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "साथी हाथ बढ़ाना", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "ऐसे – ऐसे", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "टिकट एलबम", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "झाँसी की रानी", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Knowing Our Numbers", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Whole Numbers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Playing with Numbers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Basic Geometrical Ideas", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Understanding Elementary Shapes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Integers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fractions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Decimals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Data Handling", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mensuration", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Algebra", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ratio and Proportion", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Symmetry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Practical Geometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        science: { name: "Science", chapters: [
+          { name: "Food: Where Does It Come From?", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Components of Food", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fibre to Fabric", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Sorting Materials into Groups", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Separation of Substances", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Changes Around Us", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Getting to Know Plants", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Body Movements", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Living Organisms and Their Surroundings", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Motion and Measurement of Distances", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Light, Shadows and Reflections", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Electricity and Circuits", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fun with Magnets", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Water", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Air Around Us", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Garbage In, Garbage Out", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        social_science: { name: "Social Science (History & Civics)", chapters: [
+          { name: "What, Where, How and When?", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From Hunting–Gathering to Growing Food", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "In the Earliest Cities", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "What Books and Burials Tell Us", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Kingdoms, Kings and an Early Republic", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "New Questions and Ideas", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ashoka, the Emperor Who Gave Up War", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Vital Villages, Thriving Towns", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Traders, Kings and Pilgrims", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "New Empires and Kingdoms", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Buildings, Paintings and Books", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Understanding Diversity", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "7": {
+      name: "Class 7", stage: "Middle School",
+      subjects: {
+        english: { name: "English (Honeycomb)", chapters: [
+          { name: "Three Questions", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Gift of Chappals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Gopal and the Hilsa Fish", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Ashes That Made Trees Bloom", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Quality", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Expert Detectives", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Invention of Vita-Wonk", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fire: Friend and Foe", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Bicycle in Good Repair", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Story of Cricket", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (वसंत)", chapters: [
+          { name: "हम पंछी उन्मुक्त गगन के", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "दादी माँ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "हिमालय की बेटियाँ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "कठपुतली", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मीठाईवाला", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "रक्त और हमारा शरीर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "पापा खो गए", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "शाम–एक किसान", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "चिड़िया की बच्ची", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "अपूर्व अनुभव", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Integers", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fractions and Decimals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Data Handling", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Simple Equations", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Lines and Angles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Triangle and its Properties", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Congruence of Triangles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Comparing Quantities", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Rational Numbers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Practical Geometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Perimeter and Area", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Algebraic Expressions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Exponents and Powers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Symmetry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Visualising Solid Shapes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        science: { name: "Science", chapters: [
+          { name: "Nutrition in Plants", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Nutrition in Animals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Fibre to Fabric", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Heat", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Acids, Bases and Salts", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Physical and Chemical Changes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Weather, Climate and Adaptations", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Winds, Storms and Cyclones", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Soil", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Respiration in Organisms", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Transportation in Animals and Plants", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Reproduction in Plants", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Motion and Time", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Electric Current and its Effects", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Light", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Water: A Precious Resource", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Forests: Our Lifeline", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Wastewater Story", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        social_science: { name: "Social Science", chapters: [
+          { name: "Tracing Changes Through a Thousand Years", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "New Kings and Kingdoms", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Delhi Sultans", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Mughal Empire", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Rulers and Buildings", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Towns, Traders and Craftspersons", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tribes, Nomads and Settled Communities", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Devotional Paths to the Divine", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Making of Regional Cultures", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Eighteenth-Century Political Formations", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "8": {
+      name: "Class 8", stage: "Middle School",
+      subjects: {
+        english: { name: "English (Honeydew)", chapters: [
+          { name: "The Best Christmas Present in the World", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Tsunami", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Glimpses of the Past", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Bepin Choudhury's Lapse of Memory", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Summit Within", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "This is Jody's Fawn", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Visit to Cambridge", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Short Monsoon Diary", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Great Stone Face I", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Great Stone Face II", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (वसंत)", chapters: [
+          { name: "ध्वनि", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "लाख की चूड़ियाँ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बस की यात्रा", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "दीवानों की हस्ती", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "चिट्ठियों की अनूठी दुनिया", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "भगवान के डाकिए", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "क्या निराश हुआ जाए", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "यह सबसे कठिन समय नहीं", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "कबीर की साखियाँ", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "कामचोर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Rational Numbers", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Linear Equations in One Variable", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Understanding Quadrilaterals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Data Handling", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Squares and Square Roots", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Cubes and Cube Roots", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Comparing Quantities", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Algebraic Expressions and Identities", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mensuration", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Exponents and Powers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Direct and Inverse Proportions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Factorisation", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Introduction to Graphs", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Playing with Numbers", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        science: { name: "Science", chapters: [
+          { name: "Crop Production and Management", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Microorganisms: Friend and Foe", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Synthetic Fibres and Plastics", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Materials: Metals and Non-Metals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Coal and Petroleum", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Combustion and Flame", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Conservation of Plants and Animals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Reproduction in Animals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Reaching the Age of Adolescence", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Motion and Force", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Friction", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Sound", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Chemical Effects of Electric Current", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Some Natural Phenomena", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Light", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Stars and the Solar System", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Pollution of Air and Water", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        social_science: { name: "Social Science", chapters: [
+          { name: "How, When and Where", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From Trade to Territory", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Ruling the Countryside", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tribals, Dikus and the Vision of a Golden Age", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "When People Rebel", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Civilising the 'Native', Educating the Nation", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Women, Caste and Reform", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Making of the National Movement", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "India After Independence", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Indian Constitution", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "9": {
+      name: "Class 9", stage: "Secondary",
+      subjects: {
+        english: { name: "English (Beehive)", chapters: [
+          { name: "The Fun They Had", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Sound of Music", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Little Girl", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "A Truly Beautiful Mind", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Snake and the Mirror", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "My Childhood", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Packing", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Reach for the Top", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Bond of Love", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Kathmandu", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "If I Were You", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (क्षितिज)", chapters: [
+          { name: "दो बैलों की कथा", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "ल्हासा की ओर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "उपभोक्तावाद की संस्कृति", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "साँवले सपनों की याद", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नाना पाटेकर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "प्रेमचंद के फटे जूते", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मेरे बचपन के दिन", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "एक कुत्ता और एक मैना", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "साखियाँ एवं सबद", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "वाख", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "सवैये", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "कैदी और कोकिला", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Number Systems", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Polynomials", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Coordinate Geometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Linear Equations in Two Variables", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Introduction to Euclid's Geometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Lines and Angles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Triangles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Quadrilaterals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Circles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Heron's Formula", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Surface Areas and Volumes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Statistics", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Probability", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        science: { name: "Science", chapters: [
+          { name: "Matter in Our Surroundings", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Is Matter Around Us Pure?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Atoms and Molecules", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Structure of the Atom", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Fundamental Unit of Life", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Tissues", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Motion", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Force and Laws of Motion", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Gravitation", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Work and Energy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Sound", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Improvement in Food Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Natural Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        social_science: { name: "Social Science", chapters: [
+          { name: "The French Revolution", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Socialism in Europe and the Russian Revolution", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Nazism and the Rise of Hitler", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Forest Society and Colonialism", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Pastoralists in the Modern World", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "India – Size and Location", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Physical Features of India", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Drainage", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Climate", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Natural Vegetation and Wild Life", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Population", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "What is Democracy? Why Democracy?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Constitutional Design", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Electoral Politics", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Working of Institutions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Democratic Rights", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    },
+    "10": {
+      name: "Class 10", stage: "Secondary (Board)",
+      subjects: {
+        english: { name: "English (First Flight)", chapters: [
+          { name: "A Letter to God", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Nelson Mandela: Long Walk to Freedom", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Two Stories about Flying", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "From the Diary of Anne Frank", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Hundred Dresses – I", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Hundred Dresses – II", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Glimpses of India", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Mijbil the Otter", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Madam Rides the Bus", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Sermon at Benares", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Proposal (Play)", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        hindi: { name: "हिंदी (क्षितिज)", chapters: [
+          { name: "सूरदास के पद", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "तुलसीदास", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "देव", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "जयशंकर प्रसाद – आत्मकथ्य", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "सूर्यकांत त्रिपाठी 'निराला'", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नागार्जुन", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "गिरिजाकुमार माथुर", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "ऋतुराज", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मंगलेश डबराल", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नेताजी का चश्मा", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "बालगोबिन भगत", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "लखनवी अंदाज़", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "मानवीय करुणा की दिव्य चमक", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "एक कहानी यह भी", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "स्त्री शिक्षा के विरोधी कुतर्कों का खंडन", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "नौबतखाने में इबादत", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "संस्कृति", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        mathematics: { name: "Mathematics", chapters: [
+          { name: "Real Numbers", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Polynomials", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Pair of Linear Equations in Two Variables", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Quadratic Equations", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Arithmetic Progressions", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Triangles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Coordinate Geometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Introduction to Trigonometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Some Applications of Trigonometry", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Circles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Areas Related to Circles", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Surface Areas and Volumes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Statistics", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Probability", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        science: { name: "Science", chapters: [
+          { name: "Chemical Reactions and Equations", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Acids, Bases and Salts", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Metals and Non-Metals", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Carbon and its Compounds", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Life Processes", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Control and Coordination", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "How Do Organisms Reproduce?", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Heredity", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Light – Reflection and Refraction", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Human Eye and the Colourful World", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Electricity", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Magnetic Effects of Electric Current", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Our Environment", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Management of Natural Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]},
+        social_science: { name: "Social Science", chapters: [
+          { name: "The Rise of Nationalism in Europe", locked: false, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Nationalism in India", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Making of a Global World", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "The Age of Industrialisation", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Print Culture and the Modern World", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Resources and Development", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Forest and Wildlife Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Water Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Agriculture", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Minerals and Energy Resources", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Manufacturing Industries", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Lifelines of National Economy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Power Sharing", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Federalism", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Gender, Religion and Caste", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Political Parties", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Outcomes of Democracy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Development", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Sectors of the Indian Economy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Money and Credit", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Globalisation and the Indian Economy", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }},
+          { name: "Consumer Rights", locked: true, links: { modelAnswer: "", homework: "", worksheet: "" }}
+        ]}
+      }
+    }
+  },
+  theme: { modes: ["light", "dark"], default: "light", systemPreference: true }
+};
+
+// Subject Icons
+const subjectIcons = {
+  english: '📚', hindi: '📖', mathematics: '🔢', science: '🧪',
+  social_science: '🌍', evs: '🌱', computer_applications: '💻',
+  art_education: '🎨', physical_education: '⚽'
+};
+
+// State
+let currentState = { view: 'classes', classId: null, subjectId: null, chapterIndex: null, searchActive: false, isAdminMode: false };
+let currentSearchResults = [];
+let currentEditChapter = null;
+
+// ---- Theme Manager ----
+class ThemeManager {
+  constructor() {
+    this.storageKey = 'cbse_hub_theme';
+    this.currentTheme = this.getInitialTheme();
+    this.applyTheme(this.currentTheme);
+    document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
+  }
+  getInitialTheme() {
+    const saved = localStorage.getItem(this.storageKey);
+    if (saved) return saved;
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  applyTheme(theme) {
+    this.currentTheme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(this.storageKey, theme);
+    const sun = document.querySelector('.sun-icon'), moon = document.querySelector('.moon-icon');
+    if (theme === 'dark') {
+      if (sun) { sun.style.opacity = '0'; sun.style.transform = 'rotate(-180deg) scale(0)'; }
+      if (moon) { moon.style.opacity = '1'; moon.style.transform = 'rotate(0deg) scale(1)'; }
+    } else {
+      if (sun) { sun.style.opacity = '1'; sun.style.transform = 'rotate(0deg) scale(1)'; }
+      if (moon) { moon.style.opacity = '0'; moon.style.transform = 'rotate(180deg) scale(0)'; }
+    }
+  }
+  toggleTheme() { this.applyTheme(this.currentTheme === 'light' ? 'dark' : 'light'); }
+}
+
+// ---- Progress Manager ----
+class ProgressManager {
+  constructor() {
+    this.progressKey = 'cbse_hub_progress';
+    this.linksKey = 'cbse_hub_links';
+    this.adminKey = 'cbse_hub_admin';
+    this.progress = JSON.parse(localStorage.getItem(this.progressKey) || '{}');
+    this.links = JSON.parse(localStorage.getItem(this.linksKey) || '{}');
+    currentState.isAdminMode = JSON.parse(localStorage.getItem(this.adminKey) || 'false');
+  }
+  save() { localStorage.setItem(this.progressKey, JSON.stringify(this.progress)); }
+  saveLinks() { localStorage.setItem(this.linksKey, JSON.stringify(this.links)); }
+  saveAdmin() { localStorage.setItem(this.adminKey, JSON.stringify(currentState.isAdminMode)); }
+  isChapterUnlocked(cId, sId, idx) {
+    if (idx === 0) return true;
+    return this.isChapterCompleted(cId, sId, idx - 1);
+  }
+  isChapterCompleted(cId, sId, idx) {
+    return this.progress[cId]?.[sId]?.[idx]?.completed || false;
+  }
+  getCompletionDate(cId, sId, idx) {
+    return this.progress[cId]?.[sId]?.[idx]?.completedDate || null;
+  }
+  markComplete(cId, sId, idx) {
+    if (!this.progress[cId]) this.progress[cId] = {};
+    if (!this.progress[cId][sId]) this.progress[cId][sId] = {};
+    const date = new Date().toLocaleDateString('en-GB');
+    this.progress[cId][sId][idx] = { completed: true, completedDate: date };
+    this.save();
+    return date;
+  }
+  getSubjectProgress(cId, sId) {
+    const chs = appData.classes[cId].subjects[sId].chapters;
+    const done = chs.filter((_, i) => this.isChapterCompleted(cId, sId, i)).length;
+    return { completed: done, total: chs.length, percentage: Math.round((done / chs.length) * 100) };
+  }
+  getLinks(cId, sId, idx) {
+    return this.links[cId]?.[sId]?.[idx] || { modelAnswer: '', homework: '', worksheet: '' };
+  }
+  saveChapterLinks(cId, sId, idx, lnks) {
+    if (!this.links[cId]) this.links[cId] = {};
+    if (!this.links[cId][sId]) this.links[cId][sId] = {};
+    this.links[cId][sId][idx] = lnks;
+    this.saveLinks();
+  }
+  hasLink(url) { return url && url.trim() !== ''; }
+}
+
+const themeManager = new ThemeManager();
+const pm = new ProgressManager();
+
+// ---- UI Helpers ----
+function showLoading() { document.getElementById('loading').classList.remove('hidden'); }
+function hideLoading() { document.getElementById('loading').classList.add('hidden'); }
+
+function showIOSNotification(msg, icon = '📱') {
+  const n = document.createElement('div');
+  n.className = 'glass-card';
+  n.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
+  n.style.cssText = 'position:fixed;top:100px;right:20px;z-index:10000;padding:12px 16px;border-radius:12px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;transform:translateX(120%);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);max-width:280px;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);';
+  document.body.appendChild(n);
+  setTimeout(() => n.style.transform = 'translateX(0)', 50);
+  setTimeout(() => { n.style.transform = 'translateX(120%)'; setTimeout(() => n.remove(), 350); }, 3000);
+}
+
+function animateCards() {
+  const cards = document.querySelectorAll('#contentGrid .glass-card');
+  cards.forEach((c, i) => {
+    c.style.opacity = '0'; c.style.transform = 'translateY(20px)';
+    setTimeout(() => { c.style.transition = 'all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)'; c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, i * 80);
+  });
+}
+
+function updateBreadcrumb(items) {
+  document.getElementById('breadcrumb').innerHTML = items.map((item, i) => {
+    const isLast = i === items.length - 1;
+    let click = '';
+    if (!isLast) {
+      if (i === 0) click = 'onclick="showClasses()"';
+      else if (i === 1 && currentState.classId) click = `onclick="showSubjects('${currentState.classId}')"`;
+    }
+    return `<span class="breadcrumb-item ${isLast ? 'active' : ''}" ${click}>${item}</span>`;
+  }).join('');
+}
+
+// ---- Views ----
+function showClasses() {
+  currentState = { view: 'classes', classId: null, subjectId: null, chapterIndex: null, searchActive: false, isAdminMode: currentState.isAdminMode };
+  document.getElementById('pageTitle').textContent = 'Select Your Class';
+  document.getElementById('pageSubtitle').textContent = 'Choose from Classes 1–10 to access notes, worksheets, and model answers';
+  updateBreadcrumb(['Home']);
+  document.getElementById('backBtn').classList.add('hidden');
+  hideSearchResults();
+
+  document.getElementById('contentGrid').innerHTML = Object.entries(appData.classes).map(([id, cls]) =>
+    `<div class="class-card glass-card glass-hover" onclick="showSubjects('${id}')">
+      <div class="class-number">${id}</div>
+      <h3 class="class-name glass-text">${cls.name}</h3>
+      <p class="class-stage glass-text-secondary">${cls.stage} Education</p>
+    </div>`
+  ).join('');
+  animateCards();
+}
+
+function showSubjects(classId) {
+  showLoading();
+  setTimeout(() => {
+    currentState = { ...currentState, view: 'subjects', classId, subjectId: null };
+    const cls = appData.classes[classId];
+    document.getElementById('pageTitle').textContent = `${cls.name} Subjects`;
+    document.getElementById('pageSubtitle').textContent = 'Select a subject to view chapters and resources';
+    updateBreadcrumb(['Home', cls.name]);
+    document.getElementById('backBtn').classList.remove('hidden');
+    hideSearchResults();
+
+    document.getElementById('contentGrid').innerHTML = Object.entries(cls.subjects).map(([sId, sub]) => {
+      const prog = pm.getSubjectProgress(classId, sId);
+      return `<div class="subject-card glass-card glass-hover" onclick="showChapters('${classId}','${sId}')">
+        <span class="subject-icon">${subjectIcons[sId] || '📚'}</span>
+        <h3 class="subject-name glass-text">${sub.name}</h3>
+        <p class="subject-info glass-text-secondary">${sub.chapters.length} chapters available</p>
+        <div class="subject-progress">
+          <div class="progress-bar"><div class="progress-fill" style="width:${prog.percentage}%"></div></div>
+          <span class="progress-text glass-text-secondary">${prog.completed}/${prog.total}</span>
+        </div>
+      </div>`;
+    }).join('');
+    animateCards();
+    hideLoading();
+  }, 250);
+}
+
+function showChapters(classId, subjectId) {
+  showLoading();
+  setTimeout(() => {
+    currentState = { ...currentState, view: 'chapters', classId, subjectId };
+    const cls = appData.classes[classId], sub = cls.subjects[subjectId];
+    document.getElementById('pageTitle').textContent = `${sub.name} Chapters`;
+    document.getElementById('pageSubtitle').textContent = `${cls.name} — Click on any chapter to access resources`;
+    updateBreadcrumb(['Home', cls.name, sub.name]);
+    document.getElementById('backBtn').classList.remove('hidden');
+    hideSearchResults();
+
+    document.getElementById('contentGrid').innerHTML = sub.chapters.map((ch, idx) => {
+      const unlocked = pm.isChapterUnlocked(classId, subjectId, idx);
+      const completed = pm.isChapterCompleted(classId, subjectId, idx);
+      const date = pm.getCompletionDate(classId, subjectId, idx);
+      const statusIcon = completed ? '✅' : (unlocked ? '🔓' : '🔒');
+      let adminHtml = '';
+      if (currentState.isAdminMode && unlocked) {
+        adminHtml = `<div class="admin-controls">
+          ${!completed ? `<button class="admin-btn" onclick="event.stopPropagation();markComplete('${classId}','${subjectId}',${idx})">✓ Mark Complete</button>` : ''}
+          <button class="edit-links-btn" onclick="event.stopPropagation();showLinkModal('${classId}','${subjectId}',${idx})">🔗 Edit Links</button>
+        </div>`;
+      }
+      return `<div class="chapter-card glass-card ${unlocked ? 'glass-hover' : 'locked'}" onclick="handleChapterClick('${classId}','${subjectId}',${idx})">
+        <div class="chapter-header">
+          <div class="chapter-number">Ch ${idx + 1}</div>
+          <div class="chapter-status">${statusIcon}</div>
+        </div>
+        <div>
+          <h3 class="chapter-title glass-text">${ch.name}</h3>
+          <p class="subject-info glass-text-secondary">${unlocked ? '📋 Resources available' : '🔒 Complete previous chapters'}</p>
+          ${completed && date ? `<div class="completion-date">🎯 Completed: ${date}</div>` : ''}
+        </div>
+        ${adminHtml}
+      </div>`;
+    }).join('');
+    animateCards();
+    hideLoading();
+  }, 250);
+}
+
+// ---- Chapter Actions ----
+function handleChapterClick(cId, sId, idx) {
+  if (pm.isChapterUnlocked(cId, sId, idx)) showResourceModal(cId, sId, idx);
+  else showLockedModal();
+}
+
+function markComplete(cId, sId, idx) {
+  pm.markComplete(cId, sId, idx);
+  showChapters(cId, sId);
+  showIOSNotification('Chapter marked complete!', '✅');
+}
+
+// ---- Resource Modal ----
+function showResourceModal(cId, sId, idx) {
+  const cls = appData.classes[cId], sub = cls.subjects[sId], ch = sub.chapters[idx];
+  document.getElementById('modalTitle').textContent = ch.name;
+  document.getElementById('modalSubtitle').textContent = `${cls.name} — ${sub.name}`;
+
+  // Merge default links + saved links
+  const saved = pm.getLinks(cId, sId, idx);
+  const defaultLinks = ch.links || {};
+  const links = {
+    modelAnswer: saved.modelAnswer || defaultLinks.modelAnswer || '',
+    homework: saved.homework || defaultLinks.homework || '',
+    worksheet: saved.worksheet || defaultLinks.worksheet || ''
+  };
+
+  const setResource = (linkEl, statusEl, url) => {
+    const card = linkEl.querySelector('.resource-card');
+    if (pm.hasLink(url)) {
+      linkEl.href = url; linkEl.style.pointerEvents = 'auto';
+      card.classList.remove('disabled');
+      statusEl.textContent = 'Available'; statusEl.style.color = 'var(--ios-green)';
+    } else {
+      linkEl.href = '#'; linkEl.style.pointerEvents = 'none';
+      card.classList.add('disabled');
+      statusEl.textContent = 'Not Available'; statusEl.style.color = 'var(--ios-text-tertiary)';
+    }
+  };
+  setResource(document.getElementById('modelAnswerLink'), document.getElementById('modelAnswerStatus'), links.modelAnswer);
+  setResource(document.getElementById('homeworkLink'), document.getElementById('homeworkStatus'), links.homework);
+  setResource(document.getElementById('worksheetLink'), document.getElementById('worksheetStatus'), links.worksheet);
+
+  openModal('resourceModal');
+}
+
+function showLockedModal() { openModal('lockedModal'); }
+
+// ---- Link Modal ----
+function showLinkModal(cId, sId, idx) {
+  currentEditChapter = { cId, sId, idx };
+  const cls = appData.classes[cId], sub = cls.subjects[sId], ch = sub.chapters[idx];
+  document.getElementById('linkModalSubtitle').textContent = `${cls.name} — ${sub.name} — ${ch.name}`;
+  const saved = pm.getLinks(cId, sId, idx);
+  const def = ch.links || {};
+  document.getElementById('modelAnswerInput').value = saved.modelAnswer || def.modelAnswer || '';
+  document.getElementById('homeworkInput').value = saved.homework || def.homework || '';
+  document.getElementById('worksheetInput').value = saved.worksheet || def.worksheet || '';
+  openModal('linkModal');
+}
+function closeLinkModal() { closeModal('linkModal'); currentEditChapter = null; }
+function handleLinkSave() {
+  if (!currentEditChapter) return;
+  const { cId, sId, idx } = currentEditChapter;
+  pm.saveChapterLinks(cId, sId, idx, {
+    modelAnswer: document.getElementById('modelAnswerInput').value.trim(),
+    homework: document.getElementById('homeworkInput').value.trim(),
+    worksheet: document.getElementById('worksheetInput').value.trim()
+  });
+  closeLinkModal();
+  showIOSNotification('Links saved!', '💾');
+}
+
+// ---- Password Modal ----
+function showPassModal() { openModal('passModal'); setTimeout(() => document.getElementById('passInput')?.focus(), 100); }
+function closePassModal() { closeModal('passModal'); document.getElementById('passInput').value = ''; }
+function handlePassSubmit() {
+  const val = document.getElementById('passInput').value.trim();
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2, '0');
+  const mm = String(now.getMinutes()).padStart(2, '0');
+  const valid = [hh + mm, hh + ':' + mm, '0000', '1234'];
+  if (valid.includes(val)) {
+    currentState.isAdminMode = true;
+    pm.saveAdmin();
+    updateAdminUI();
+    closePassModal();
+    if (currentState.view === 'chapters') showChapters(currentState.classId, currentState.subjectId);
+    showIOSNotification('Teacher Mode Enabled!', '👩‍🏫');
+  } else {
+    const inp = document.getElementById('passInput');
+    inp.classList.add('shake');
+    setTimeout(() => { inp.classList.remove('shake'); inp.value = ''; inp.focus(); }, 500);
+  }
+}
+
+// ---- Admin Toggle ----
+function handleAdminToggle() {
+  if (currentState.isAdminMode) {
+    currentState.isAdminMode = false;
+    pm.saveAdmin();
+    updateAdminUI();
+    if (currentState.view === 'chapters') showChapters(currentState.classId, currentState.subjectId);
+    showIOSNotification('Student Mode Enabled', '🎓');
+  } else {
+    showPassModal();
+  }
+}
+function updateAdminUI() {
+  const btn = document.getElementById('adminToggle');
+  if (currentState.isAdminMode) { btn.innerHTML = '👩‍🏫 Exit Teacher Mode'; btn.classList.add('active'); }
+  else { btn.innerHTML = '🔧 Admin Mode'; btn.classList.remove('active'); }
+}
+
+// ---- Generic Modal Open/Close ----
+function openModal(id) {
+  const m = document.getElementById(id);
+  m.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => m.style.opacity = '1', 10);
+}
+function closeModal(id) {
+  const m = document.getElementById(id);
+  m.style.opacity = '0';
+  setTimeout(() => { m.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
+}
+
+// ---- Search ----
+function handleSearch() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) { hideSearchResults(); return; }
+  const results = [];
+  Object.entries(appData.classes).forEach(([cId, cls]) => {
+    if (cls.name.toLowerCase().includes(q) || cls.stage.toLowerCase().includes(q))
+      results.push({ type: 'class', title: cls.name, subtitle: cls.stage + ' Education', data: { cId } });
+    Object.entries(cls.subjects).forEach(([sId, sub]) => {
+      if (sub.name.toLowerCase().includes(q))
+        results.push({ type: 'subject', title: sub.name, subtitle: cls.name + ' — ' + sub.chapters.length + ' chapters', data: { cId, sId } });
+      sub.chapters.forEach((ch, idx) => {
+        if (ch.name.toLowerCase().includes(q))
+          results.push({ type: 'chapter', title: ch.name, subtitle: `${cls.name} — ${sub.name} — Ch ${idx + 1}`, data: { cId, sId, idx }, unlocked: pm.isChapterUnlocked(cId, sId, idx) });
+      });
+    });
+  });
+  currentSearchResults = results;
+  const icons = { class: '🏫', subject: '📚', chapter: '📄' };
+  const grid = document.getElementById('searchResultsGrid');
+  if (!results.length) {
+    grid.innerHTML = `<div class="search-no-results"><div style="font-size:3rem;margin-bottom:1rem">🔍</div><p class="glass-text">No results found for "${q}"</p></div>`;
+  } else {
+    grid.innerHTML = results.map((r, i) => `
+      <div class="search-result-card glass-card glass-hover ${r.type === 'chapter' && !r.unlocked ? 'locked' : ''}" onclick="handleSearchResult(${i})">
+        <div class="search-result-type glass-text-secondary">${icons[r.type]} ${r.type.toUpperCase()}</div>
+        <h4 class="glass-text">${r.type === 'chapter' && !r.unlocked ? '🔒 ' : ''}${r.title}</h4>
+        <p class="glass-text-secondary" style="margin:0;font-size:.9rem">${r.subtitle}</p>
+      </div>`).join('');
+  }
+  document.getElementById('searchResults').classList.remove('hidden');
+}
+
+function handleSearchResult(i) {
+  const r = currentSearchResults[i];
+  if (!r) return;
+  hideSearchResults();
+  document.getElementById('searchInput').value = '';
+  const d = r.data;
+  if (d.idx !== undefined) { showChapters(d.cId, d.sId); setTimeout(() => handleChapterClick(d.cId, d.sId, d.idx), 400); }
+  else if (d.sId) showChapters(d.cId, d.sId);
+  else showSubjects(d.cId);
+}
+
+function hideSearchResults() {
+  document.getElementById('searchResults').classList.add('hidden');
+  currentSearchResults = [];
+}
+
+// ---- Handle Back ----
+function handleBack() {
+  if (currentState.view === 'subjects') showClasses();
+  else if (currentState.view === 'chapters') showSubjects(currentState.classId);
+}
+
+// ---- Init ----
+function init() {
+  showClasses();
+  updateAdminUI();
+
+  document.getElementById('backBtn').addEventListener('click', handleBack);
+  document.getElementById('searchBtn').addEventListener('click', handleSearch);
+  document.getElementById('adminToggle').addEventListener('click', handleAdminToggle);
+  document.getElementById('teacherBtn').addEventListener('click', showPassModal);
+  document.getElementById('searchInput').addEventListener('keypress', e => { if (e.key === 'Enter') handleSearch(); });
+  document.getElementById('searchInput').addEventListener('input', e => { if (!e.target.value) hideSearchResults(); });
+
+  // Modal close buttons
+  document.getElementById('modalClose').addEventListener('click', () => closeModal('resourceModal'));
+  document.getElementById('modalOverlay').addEventListener('click', () => closeModal('resourceModal'));
+  document.getElementById('lockedModalClose').addEventListener('click', () => closeModal('lockedModal'));
+  document.getElementById('lockedModalOverlay').addEventListener('click', () => closeModal('lockedModal'));
+  document.getElementById('passModalClose').addEventListener('click', closePassModal);
+  document.getElementById('passModalOverlay').addEventListener('click', closePassModal);
+  document.getElementById('passCancel').addEventListener('click', closePassModal);
+  document.getElementById('passSubmit').addEventListener('click', handlePassSubmit);
+  document.getElementById('passInput').addEventListener('keypress', e => { if (e.key === 'Enter') handlePassSubmit(); });
+  document.getElementById('passInput').addEventListener('input', e => { e.target.value = e.target.value.replace(/[^0-9:]/g, '').slice(0, 5); });
+  document.getElementById('linkModalClose').addEventListener('click', closeLinkModal);
+  document.getElementById('linkModalOverlay').addEventListener('click', closeLinkModal);
+  document.getElementById('linkCancel').addEventListener('click', closeLinkModal);
+  document.getElementById('linkSave').addEventListener('click', handleLinkSave);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      ['resourceModal','lockedModal','passModal','linkModal'].forEach(id => {
+        if (!document.getElementById(id).classList.contains('hidden')) closeModal(id);
+      });
+    }
+  });
+}
+
+window.showClasses = showClasses;
+window.showSubjects = showSubjects;
+window.showChapters = showChapters;
+window.handleChapterClick = handleChapterClick;
+window.markComplete = markComplete;
+window.showLinkModal = showLinkModal;
+window.handleSearchResult = handleSearchResult;
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
